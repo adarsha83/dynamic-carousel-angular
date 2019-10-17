@@ -1,0 +1,45 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+body { 
+    font-family: Roboto, Arial, sans-serif;
+    margin: 0;
+}
+  
+.basic-container {
+    padding: 30px;
+    display: inline-block;
+}
+
+.version-info {
+    font-size: 8pt;
+    float: right;
+}
+.product-info {
+    display: inline-block;
+}
+span.previous-product {
+    margin-top: 10%;
+    cursor: pointer;
+    color: blue;
+}
+span.next-product {
+    margin-top: 10%;
+    cursor: pointer;
+    color: blue;
+}
+.category-list {
+    width: 100%;
+}
+.products-container {
+    margin-top: 50px;
+    margin-left: 50px;
+}
+.clear-filter-btn {
+    margin-left: 50px;
+}
+.product-title {
+    text-align: center;
+}
+.product-price {
+    text-align: center;
+}

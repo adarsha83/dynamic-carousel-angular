@@ -1,0 +1,26 @@
+<div class="mat-app-background basic-container col-md-8">
+    <mat-form-field class="category-list">
+      <mat-chip-list #chipList aria-label="Category Selection">
+          <mat-chip *ngFor="let category of categoryFilters" [selectable]="selectable"
+          [removable]="removable" (removed)="remove(category)">
+            {{category}}
+            <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+          </mat-chip>
+          <input type="text" placeholder="Filter by categories..."
+                [matChipInputFor]="chipList"
+                [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                [matChipInputAddOnBlur]="addOnBlur"
+                (matChipInputTokenEnd)="add($event)">
+      </mat-chip-list>
+    </mat-form-field>
+</div>
+<button type="button" class="btn btn-primary clear-filter-btn" (click)="clearFilters()">Clear Filters</button>
+<div class="row products-container">
+  <span class="glyphicon glyphicon-chevron-left previous-product" (click)="previousProducts()" *ngIf="currentStartingIndex>0">&lt;</span>
+  <div class="col-md-3 product-info" *ngFor="let product of viewPortProducts;let i=index;">
+    <img [src]="product.imageUrl" class="col-md-12">
+    <div class="product-title">{{product.title}}</div>
+    <div class="product-price">{{product.price}}</div>
+  </div>
+  <span class="glyphicon glyphicon-chevron-right next-product" (click)="nextProducts()" *ngIf="(currentStartingIndex+viewPortSize)<products.length">&gt;</span>
+</div>
